@@ -21,3 +21,11 @@ sd(1:2) ^ 2
 
 list(mean(x), sd(x))
 
+
+
+From the data set in step 4, I created a second, independent tidy data set
+## with the average of each variable for each activity and each subject.
+
+mergedData2 = merge(trainingset,testset,by.x="testset",by.y=" ",all=TRUE)
+head(mergedData2) 
+mean(mergeData2)
