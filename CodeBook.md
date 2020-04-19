@@ -43,7 +43,7 @@ test2$newdata.id <- activities[test2$newdata.id, 2]
 # 5. From step 4, create a second, independent tidy data set with the average of each 
 # variable for each activity and each subject
 
-write.table(test2,"test2.txt",row.name=TRUE)
+write.table(test2,"test2.txt",row.name=FALSE)
 
 # Save final tidy data file as a .txt using write.table
 test2.txt
