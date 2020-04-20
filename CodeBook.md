@@ -22,28 +22,28 @@ Test<-rbind(New_test,New_train)
 St <- rbind (subject_test, subject_train)
 Yt <-rbind(test_numbers,train_numbers)
 
-newdata<-cbind(St,Yt,Test)
-colnames(newdata)[2]<-"id"
+mydata2<-cbind(St,Yt,Test)
+colnames(mydata2)[2]<-"id"
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement
 
 namesfilter<-grep(".*mean.*|.*std.*", features[,2])
-namesfilter<-grep("mean|std",names(newdata), ignore.case=TRUE,value=TRUE)
+namesfilter<-grep("mean|std",names(mydata2), ignore.case=TRUE,value=TRUE)
 
 # 3. Uses descriptive activity names to name the activities in the data set
 
-test2<-data.frame(newdata$subject,newdata$id,newdata[,namesfilter])
+test2<-data.frame(mydata2$subject,mydata2$id,mydata2[,namesfilter])
 
 
 # 4. Appropriately labels the data with descriptive variable names
 
-test2$newdata.id <- activities[test2$newdata.id, 2]
+test2$mydata2.id <- activities[test2$mydata2.id, 2]
 
 
 # 5. From step 4, create a second, independent tidy data set with the average of each 
 # variable for each activity and each subject
 
-write.table(test2,"test2.txt",row.name=FALSE)
+write.table(test2,"test2.txt",row.name=TRUE)
 
 # Save final tidy data file as a .txt using write.table
 test2.txt
